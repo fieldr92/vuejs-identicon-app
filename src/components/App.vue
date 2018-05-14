@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="app-template">
       <h3>My Identicon Generator</h3>
       <div>
           Input:
           <input v-on:input="onInput" />
       </div>
       <div>
-          Output: {{ reversal }} <!-- REVERSAL ONLY HERE TO SHOW WHAT CAN BE PUT IN CURLY BRACES -->
+          Output: <div class="output">{{ reversal }}</div> <!-- REVERSAL ONLY HERE TO SHOW WHAT CAN BE PUT IN CURLY BRACES -->
           <div v-html="identicon"></div>
       </div>
   </div>
@@ -37,12 +37,24 @@ export default {
 </script>
 
 <style scoped>
+
     div {
         font-size: 1em;
         font-family: 'Gill Sans';
     }
 
+    .app-template {
+        text-align: center;
+    }
+
     h3 {
         font-size: 2em;
+        margin: 20px;
     }
+
+    .output {
+        display: inline-block;
+        width: 120px;
+    }
+
 </style>
